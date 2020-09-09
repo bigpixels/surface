@@ -1,0 +1,484 @@
+@import 'reset';
+@import 'var';
+@import 'particles';
+@import 'fonts';
+@import 'responsive-txt';
+
+.body, html {
+	overflow-x: hidden !important;
+	width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	border: 0;
+	outline: none;
+}
+
+.container {
+	max-width: 1512px;
+	padding: 0 20px;
+	margin: auto;
+}
+
+//header
+	.header {
+		background: url('../img/header__bgi.jpg') no-repeat center / cover;
+		padding: 50px 0 105px 0;
+		position: relative;
+		&__title {
+			position: relative;
+		}
+		&__be-rec {
+			text-align: left;
+			position: relative;
+			z-index: 1;
+		}
+		&__play-sports {
+			text-align: right;
+		}
+		&__kind-of-sport {
+			@include classic-flex;
+			max-width: 575px;
+			margin-left: auto;
+		}
+	}
+	.header__kind-of-sport .title {
+		text-align: center;
+	}
+
+	.logo-link {
+		display: block;
+		&__img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+//end header
+
+//main
+	.athlets {
+		&__inner {
+			position: relative;
+		}
+		&__img-area {
+			position: absolute;
+			width: 42%;
+			left: 0;
+			top: 45px;
+			z-index: 1;
+			&::before {
+				@include line-footballer;
+			}
+		}
+		&__img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.players {
+		&__inner {
+			position: relative;
+		}
+		&__img-area {
+			position: absolute;
+			width: 110%;
+			top: 20%;
+			right: -95%;
+			z-index: 1;
+			&::before {
+				@include line-1-basketboller;
+			}
+			&::after {
+				@include line-2-basketboller;
+			}
+		}
+		&__img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.be-active, .find-contact, .work-it {
+		position: relative;
+	}
+
+	.img-area {
+		top: 0;
+		&__img-background {
+			width: 50%;
+			height: 100%;
+			position: absolute;
+			&_be-active {
+				background: url(../img/be-active__img.jpg) no-repeat center/cover;
+			}
+			&_find-contact {
+				background: url(../img/find-contact__img.jpg) no-repeat center/cover;
+			}
+			&_work-it {
+				background: url(../img/work-it__img.jpg) no-repeat center/cover;
+			}
+		}
+		&__img-responsive {
+			display: none;
+			width: 100%;
+			height: 100%;
+		}
+		&__left {
+			left: 0;
+		}
+		&__right {
+			right: 0;
+		}
+	}
+
+	/* Слайдер с точками */ 
+	.slick-slider.slick-dotted {
+		position: relative;
+	}
+
+	/* Ограничивающая оболочка */ 
+	.slick-list {
+		overflow: hidden;
+	} 
+	/* Лента слайдов */ 
+	.slick-track{
+		@include classic-flex;
+		align-items: flex-start;
+	}
+
+	/* Точки (булиты) */ 
+	.slick-dots{
+		@include classic-flex;
+		width: 50px;
+		position: absolute;
+		@include center;
+		top: 20px;
+	} 
+ 
+	/* Активная точка */
+	.slick-dots li.slick-active {
+		@include animation-pulse; 
+	} 
+	.slick-dots li.slick-active button{
+		background-color: $color-success;
+	}
+
+	/* Элемент точки */ 
+	.slick-dots li button{
+		font-size: 0;
+		width: 15px;
+		height: 15px;
+		background-color: $color-paragraph;
+		border-radius: 50%;
+	} 
+//end main
+
+	.footer {
+		background: url('../img/footer__bgi.jpg') no-repeat center / cover;
+		padding: 1px 0;
+		position: relative;
+		&__artwork-img {
+			width: 130px;
+			height: 130px;
+		}
+		&__inner {
+			@include classic-flex;
+			margin: 230px auto 160px auto;
+		}
+		&__socials {
+			@include classic-flex;
+			align-items: center;
+			flex-basis: 9%;
+			@include animation-pulse;
+		}
+		&__social-link {
+			display: block;
+		}
+	}
+	.footer .title_color-can-do {
+		position: relative;
+		z-index: 1;
+	}
+	.footer .area-header-footer {
+		padding: 65px 20px;
+		background-color: $color-info;
+		opacity: 0.8;
+	}
+
+//@media
+	@media screen and (max-width: 1699px) {
+		.athlets__img-area {
+			left: 5%;
+		}
+	}
+
+	@media screen and (max-width: 1099px) {
+		.margin_mt-192 {
+			margin-top: 130px;
+		}
+
+		.header h1 {
+			margin: 200px auto 200px auto;
+			max-width: 600px;
+		}
+		.header__play-sports {
+			max-width: 84%;
+			font-size: 64px;
+			margin-left: auto;
+			text-align: left;
+			position: relative;
+			z-index: 0;
+		}
+		.header__be-rec {
+			font-size: 64px;
+		}
+		.header__kind-of-sport {
+			max-width: 100%;
+			margin-bottom: 115px;
+		}
+
+		.footer .field_mxw-79percent {
+			max-width: 100%;
+			margin: 0 auto;
+		}
+		.footer__artwork-img {
+			margin: 0 auto 80px auto;
+		}
+		.footer .logo-link, .footer .title_fsz-20 {
+			display: none;
+		}
+		.footer__socials {
+			margin: 0 auto;
+			flex-basis: auto;
+		}
+		.footer__social-link {
+			margin: 0 20px;
+		}
+		.footer .area-header-footer {
+			padding: 35px 0;
+		}
+		.footer .title {
+			text-align: center;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.button {
+			margin: 0 5px;
+		}
+
+		.field_pad-88-0 {
+			padding: 66px 0;
+		}
+
+		.athlets__img-area {
+			left: -18%;
+		}
+		.athlets__txt-area {
+			max-width: 58%;
+			padding: 75px 0;
+		}
+		.athlets h2, .players h2 {
+			@include fluidFontSize (50px, 90px, 320px, 768px, 90px);
+		}
+		.athlets__txt-area .margin_mt-90 {
+			margin-top: 50px;
+		}
+		.athlets .margin_mt-90,
+		.players .margin_mt-90 {
+			margin-top: 50px;
+		}
+		.athlets__img-area {
+			width: 64%;
+			left: -25%;
+			top: 100px;
+		}
+		.athlets .title_fsz-20,
+		.players .title_fsz-20 {
+			@include fluidFontSize (15px, 20px, 320px, 768px, 20px);
+		}
+		.athlets .title_fsz-36,
+		.players .title_fsz-36 {
+			@include fluidFontSize (28px, 36px, 320px, 768px, 36px);
+		}
+		.athlets .title_fsz-18,
+		.players .title_fsz-18 {
+			@include fluidFontSize (14px, 18px, 320px, 768px, 18px);
+		}
+
+		.players__img-area {
+			width: 150%;
+    		right: -125%;
+		}
+
+		.field_mxw-50percent {
+			max-width: 60%;
+		}
+		.field_pad-110-0-60-0 {
+			padding: 80px 0;
+		}
+		.field_pad-66, .field_pad-88 {
+			padding: 42px 0;
+		}
+
+		.cross__footballer {
+			left: 50%;
+			top: 0;
+		}
+		.cross .cross_opacity-0-5_footballer {
+			left: -22px;
+    		top: -10px;
+		}
+		.cross_basketballer {
+			top: 10%;
+		}
+
+		.find-contact .field__number,
+		.be-active .field__number,
+		.work-it .field__number {
+			display: none;
+		}
+
+		.be-active .field_mxw-42percent, .be-active .field_mxw-50percent,
+		.find-contact .field_mxw-42percent, .find-contact .field_mxw-50percent,
+		.work-it .field_mxw-42percent, .work-it .field_mxw-79percent {
+			max-width: 100%;
+		}
+
+		.field_pad-255-0-125-0 {
+			padding: 7% 0 12% 0;
+		}
+
+		.img-area__img-background {
+			display: none;
+		}
+		.img-area__img-responsive {
+			display: block;
+		}
+		.footer .title_fsz-90 {
+			@include fluidFontSize (34px, 80px, 320px, 768px, 80px);
+		}
+		.footer .title_fsz-36 {
+			@include fluidFontSize (15px, 36px, 320px, 768px, 36px);
+		}
+
+		.footer__artwork-img {
+			width: 20%;
+			height: auto;
+		}
+		.footer__inner {
+			margin-top: 120px;
+		}
+	}
+
+	@media screen and (max-width: 599px) {
+		.athlets h2 {
+			margin-right: auto;
+		}
+
+		.athlets__img-area,
+		.players__img-area {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.field_mxw-50percent {
+			max-width: 100%;
+		}
+
+		.athlets .field_pad-110-0-60-0, 
+		.players .field_pad-110-0-60-0 {
+			padding: 42px 0;
+		}
+		.athlets .field_bg-gray {
+			margin-top: 240px;
+			padding-top: 80px;
+		}
+		.athlets__img-area {
+			width: 200px;
+			top: 270px;
+		}
+		.players__img-area {
+			width: 300px;
+			top: 275px;
+		}
+		.players .field_bg-gray {
+			margin-top: 175px;
+			padding-top: 80px;
+		}
+
+		.cross__footballer {
+			left: 5%;
+			top: 30px;
+		}
+		.cross_basketballer {
+			left: 20%;
+			top: 30px;
+		}
+		.cross__opacity-0-5_basketballer {
+			left: -20px;
+			top: -10px;
+		}
+
+		.area-header-footer .title {
+			display: none;
+		}
+		.area-header-footer .logo-link{
+			margin: 0 auto;
+		}
+		
+		.header h1 {
+			margin: 140px auto 90px auto;
+			max-width: 280px
+		}
+		.header__kind-of-sport {
+			font-size: 12px;
+		}
+		.header__play-sports {
+			font-size: 32px;
+		}
+		.header__be-rec {
+			font-size: 32px;
+		}
+
+		.button {
+			margin: 0 5px;
+		}
+		.button__txt-area {
+			padding: 0 0 0 25px;
+		}
+		.button_pad-apple {
+			padding: 10px 14px;
+		}
+		.button_pad-g-play {
+			padding: 10px 24px;
+		}
+		.button__txt-area{
+			font-size: 8px;
+		}
+
+		.footer__inner {
+			margin-bottom: 80px;
+		}
+	}
+
+	@media screen and (max-width: 399px) {
+		.header__kind-of-sport {
+			margin: 0;
+			position: relative;
+			bottom: -115px;
+		}
+		.header__kind-of-sport .title:nth-child(4), 
+							   .title:nth-child(5) {
+			flex-basis: 50%;
+			line-height: 2.5;
+		}
+	}
+//end @media

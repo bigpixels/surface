@@ -1,0 +1,313 @@
+@import 'responsive-txt';
+
+.area-header-footer {
+	@include classic-flex;
+	align-items: center;
+}
+
+.button {
+	display: block;
+	height: auto;
+	position: relative;
+	background-color: $color-success;
+	margin: 0 40px;
+	border-radius: 50px;
+	max-width: 310px;
+	box-shadow: 0px 10px 25px 5px rgba(12,16,53,1);
+	transition-duration: 0.8s;
+	&__flex-area {
+		@include classic-flex;
+		justify-content: center;
+		flex-wrap: nowrap;
+	}
+	&__txt-area {
+		text-align: left;
+		padding: 0 0 0 50px;
+		position: relative;
+		max-width: 158px;
+		margin: 0 auto;
+		&_g-play {
+			&::before {
+				@include g-play;
+			}
+		}
+		&_apple {
+			&::before {
+				@include apple;
+			}
+		}
+	}
+	&_pad-apple {
+		padding: 20px 40px;
+	}
+	&_pad-g-play {
+		padding: 20px 64px;
+	}
+	&:hover {
+		transform: scale(1.2);
+		@media screen and (max-width: 1099px) {
+			transform: none;
+		}
+	}
+}
+
+.field {
+	position: relative;
+	&__primary {
+		margin-left: auto;
+	}
+	&__number {
+		position: relative;
+		bottom: 10px;
+		padding-bottom: 5px;
+		max-width: 25px;
+		&::before {
+			@include line-mini;
+			width: 105%;
+		}
+		&_line-color-main {
+			&::before {
+				background-color: $color-main;
+			}
+		}
+	}
+	&__number-background {
+		position: absolute;
+		@include center;
+		top: 38%;
+		background-color: $color-success;
+		height: 30px;
+		padding: 60px 70px;
+		@media screen and (max-width: 1920px) {
+			padding: 3.5% 4%;
+		}
+		z-index: 2;
+		&::before {
+			@include line-mini_purple-background;
+		}
+	}
+	&_line-mini {
+		&::before {
+			@include line-mini;
+			width: 25px;
+		}
+	}
+	&_mxw-79percent {
+		max-width: 79%;
+	}
+	&_mxw-60percent {
+		max-width: 60%;
+	}
+	&_mxw-50percent {
+		max-width: 50%;
+	}
+	&_mxw-42percent {
+		max-width: 42%;
+	}
+	&_mxw-904 {
+		max-width: 904px;
+	}
+	&_bg-gray {
+		background-color: $color-bg-gray;
+	}
+	&_bg-success {
+		background-color: $color-success;
+	}
+	&_bg-info {
+		background-color: $color-info;
+	}
+	&_pad-66-0 {
+		padding: 66px 0;
+	}
+	&_pad-88-0 {
+		padding: 88px 0;
+	}
+	&_pad-110-0-60-0 {
+		padding: 110px 0 60px 0;
+	}
+	&_pad-255-0-125-0 {
+		padding: 17% 0 20% 0;
+	}
+	&_pad-110-0 {
+		padding: 5% 0;
+	}
+}
+
+.symbol-p {
+	position: relative;
+	&::before {
+		@include line-p;
+		@include animation-pulse;
+	}
+}
+.symbol-o {
+	position: relative;
+	z-index: 1;
+	&::before {
+		@include line-o;
+		@include animation-pulse;
+	}
+}
+.symbol-d {
+	position: relative;
+	z-index: 1;
+	&::before {
+		@include line-d;
+		@include animation-pulse;
+	}
+}
+
+.cross {
+	position: absolute;
+	&__footballer {
+		left: 15%;
+		top: 12%;
+	}
+	&__basketballer {
+		left: 29%;
+		top: 15%;
+		&_right {
+			right: 22%;
+			bottom: 55%;
+		}
+	}
+	&::after {
+		@include cross-line-vertical;
+	}
+	&::before {
+		@include cross-line-horizontal;
+	}
+	&__opacity-0-5 {
+		opacity: 0.5;
+		&_footballer {
+			left: -22px;
+    		top: -10px;
+		}
+		&_basketballer {
+			left: 25px;
+    		top: 20px;
+		}
+		&::after {
+			@include cross-line-vertical;
+		}
+		&::before {
+			@include cross-line-horizontal;
+		}
+	}
+}
+
+.title {
+	display: block;
+	text-align: left;
+	text-transform: uppercase;
+	&_ProximaNova-Light {
+		font-family: 'ProximaNova-Light';
+	}
+	&_ProximaNova-Bold {
+		font-family: 'ProximaNova-Bold';
+	}
+	&_ProximaNova-Semibold {
+		font-family: 'ProximaNova-Semibold';
+	}
+	&_ProximaNova-Regular {
+		font-family: 'ProximaNova-Regular';
+	}
+	&_fsz-12 {
+		font-size: 12px;
+	}
+	&_fsz-14 {
+		font-size: 14px;
+	}
+	&_fsz-18 {
+		font-size: 18px;
+	}
+	&_fsz-20 {
+		@include fluidFontSize (18px, 20px, 768px, 1920px, 20px);
+	}
+	&_fsz-24 {
+		font-size: 24px;
+	}
+	&_fsz-36 {
+		font-size: 36px;
+	}
+	&_fsz-90 {
+		font-size: 90px;
+	}
+	&_lh-1-5 {
+		line-height: 1.5;
+	}
+	&_color-main {
+		color: $color-main;
+	}
+	&_color-info {
+		color: $color-info;
+	}
+	&_color-title {
+		color: $color-title;
+	}
+	&_color-subtitle {
+		color: $color-subtitle;
+	}
+	&_color-success {
+		color: $color-success;
+	}
+	&_color-paragraph {
+		color: $color-paragraph;
+	}
+	&_color-secondary {
+		color: $color-secondary;
+	}
+	&_color-line {
+		color: $color-line;
+	}
+	&_color-can-do {
+		color: $color-can-do;
+	}
+}
+
+.find-contact .title,
+.be-active .title,
+.work-it .title {
+	@include fluidFontSize (28px, 90px, 320px, 768px, 90px);
+	@include fluidFontSize (40px, 90px, 769px, 1920px, 90px);
+}
+
+.find-contact .title_fsz-24,
+.be-active .title_fsz-24,
+.work-it .title_fsz-24 {
+	@include fluidFontSize (16px, 24px, 320px, 768px, 24px);
+}
+
+.margin {
+	/*mt*/
+	&_mt-313 {
+		margin-top: 313px;
+	}
+	&_mt-192 {
+		margin-top: 192px;
+	}
+	&_mt-90 {
+		margin-top: 90px;
+	}
+	/*end mt*/
+
+	/*mb*/
+	&_mb-15 {
+		margin-bottom: 15px;
+	}
+	&_mb-225 {
+		margin-bottom: 225px;
+	}
+	&_mb-25 {
+		margin-bottom: 25px;
+	}
+	/*end mb*/
+
+	/*ml*/
+	
+	/*end ml*/
+
+	/*mr*/
+
+	/*end mr*/
+}
